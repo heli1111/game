@@ -2,7 +2,7 @@
  
 class Generator
     attr_accessor :num1, :num2, :result
-    
+
     def initialize(num1, num2)
         @num1 = num1
         @num2 = num2
