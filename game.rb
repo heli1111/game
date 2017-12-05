@@ -13,8 +13,21 @@ class Game
         @players.push(player)
     end
 
+    def next_player
+        @current_player_indice = (@current_player_indice + 1) % players.size
+    end
+
     # actual game prompts
     def run
-        puts "hello #{@players[@current_player_indice].id}"
+        i = 0
+        loop do
+            puts "hello #{@players[@current_player_indice].id}"
+            gets.chomp 
+            next_player
+            i += 1
+            if i == 4
+                break
+            end
+        end
     end
 end
